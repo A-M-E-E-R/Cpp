@@ -38,7 +38,6 @@ bool if_taken(int p){
 }
 
 void get_input(int in){
-    show_the_board(ans);
 re1:
     std::cout<<"\nEnter the position number: ";
     int p;
@@ -61,6 +60,7 @@ re1:
             }
         }
     }
+    show_the_board(ans);
 }
 
 void player_X(){
