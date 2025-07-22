@@ -86,6 +86,7 @@ character learn_skill(){
     int y = rand() % 10 + 1;
     int ans;
     std::cout<<x<<" x "<<y<<" = ";
+    std::cout<<"**Answer the math correctly to learn a skill**\n";
     std::cin>>ans;
     if(x*y == ans){
         std::cout<<"Wow... Excellent. Now its time to chose your skill!!!\n";
@@ -98,6 +99,9 @@ character learn_skill(){
         else{
            Geralt = Xp('i');
         }
+    }
+    else{
+             std::cout<<"Oh no. Geralt couldn't learn the skill!!!\n";
     }
     return Geralt;
 }
