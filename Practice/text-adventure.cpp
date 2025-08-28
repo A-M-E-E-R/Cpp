@@ -178,7 +178,7 @@ restart:
     std::cout<<"\nOn the way, He saw a man being threatened by 2 thugs.";
     std::cout<<"\nGeralt has always stood for the poor and justice. \nPress 'x' to defend the peasant: ";
     std::string opt;
-    fflush(stdin);
+    std::cin.ignore();
     std::cin>>opt;
     if(opt == "x" || opt == "X"){
         std::cout<<"Gearalt: Step away or Know the wrath of my blade!!\n";
@@ -194,7 +194,7 @@ restart:
         //fighting starts
         while(Geralt.health>0 && (thug1.health>0 || thug2.health>0)){
             std::cout<<"Geralt has the first oppurtunity to give a swing. press 'x' to attack: ";
-            fflush(stdin);
+            std::cin.ignore();
             std::cin>>opt;
             if(opt == "x" || opt == "X"){
                 thug1 = Attack(Geralt,thug1);
@@ -211,14 +211,14 @@ restart:
         }
         std::cout<<"The peasant is now releaved. He offered you a fruit to show his gratitude.\n";
         std::cout<<"Enter any key to eat the fruit: ";
-        fflush(stdin);
+        std::cin.ignore();
         std::cin>>opt;
         std::cout<<"Geralt all of a sudden feels good and powerful...\n";
         std::cout<<"The peasant disappears and Geralt now understood the man was a wizard.\n";
         Geralt.health += 50;
         stats(Geralt);
         std::cout<<"Press any key to learn  a skill: ";
-        fflush(stdin);
+        std::cin.ignore();
         std::cin>>opt;
         std::cout<<"\n**Igni -> fire elementa (heat).**\n"<<"**Strong against = melee and magic**\n"<<"**Weak aaginst = water and earth elementa**\n";
         std::cout<<"\n**Aard -> Air elementa (air).**\n"<<"**Strong against =  Water and magic**\n"<<"**Weak aaginst = melee and plant monsters**\n";
@@ -239,12 +239,12 @@ restart:
         std::cout<<i<<" mins\n";
     }
     std::cout<<"Enter any key for Geralt to wake up: ";
-    fflush(stdin);
+    std::cin.ignore();
     std::cin>>opt;
     stats(Geralt);
     std::cout<<"Before Geralt start his journey ahead, he heard a scream of a lady from the river nearby.\n"<<"He ran toward the sound... He saw a water monster ready to devour its meal\n";
     std::cout<<"Enter 'x' to protect the lady from the monster: ";
-    fflush(stdin);
+    std::cin.ignore();
     std::cin>>opt;
     if(opt == "x" || opt == "X"){
         character water_monster = monsters("Water Monster");
@@ -257,7 +257,7 @@ restart:
             std::cout<<"Enter 'x' to Attack "<<Geralt.power<<"\n";
             if(opt != "a") std::cout<<"Enter 'a' to Aard "<<Geralt.abilities.Aard<<"\n";//if Aard is previous attack (cooldown)
             if(opt != "i")std::cout<<"Enter 'i' to Igni "<<Geralt.abilities.Igni<<"\n";//if Igni is previous attack 
-            fflush(stdin);
+            std::cin.ignore();
             std::cin>>opt;
             if(opt == "x" || opt == "X"){
                 std::cout<<"Geralt swings his sword at the monster\n";
@@ -287,7 +287,7 @@ restart:
         std::cout<<"The monster was blasted its gut out. It heart was still pumbing\n";
         std::cout<<"The lady is still in shock. She eventually got up and thanked Geralt, and walked away.\n";
         std::cout<<"Geralt took the heart in his hand and was ready to use it to his advantage. Enter any key to upgrade your attacking skills: ";
-        fflush(stdin);
+        std::cin.ignore();
         std::cin>>opt;
         Geralt = learn_skill();
         Geralt = learn_skill();
@@ -330,7 +330,7 @@ restart:
         std::cout<<"Enter 'x' to Attack "<<Geralt.power<<"\n";
         if(opt != "a") std::cout<<"Enter 'a' to Aard "<<Geralt.abilities.Aard<<"\n";//if Aard is previous attack (cooldown)
         if(opt != "i")std::cout<<"Enter 'i' to Igni "<<Geralt.abilities.Igni<<"\n";//if Igni is previous attack 
-        fflush(stdin);
+        std::cin.ignore();
         std::cin>>opt;
         if(opt == "x" || opt == "X"){
             std::cout<<"Geralt swings his sword at the Vamp\n";
@@ -370,4 +370,5 @@ restart:
     }
     std::cout<<"The Witcher was honoured to save the ruler of Tuissaint.\n\n"<<"Geralt Adventures will continue...\n";
 }
+
 
