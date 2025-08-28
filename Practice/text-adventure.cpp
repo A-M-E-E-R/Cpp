@@ -70,7 +70,7 @@ void stats(character x){
         std::cout<<"Aard : "<<x.abilities.Aard<<"\n";
     }
     if(x.abilities.Igni){
-        std::cout<<"Igni : "<<x.abilities.Aard<<"\n";
+        std::cout<<"Igni : "<<x.abilities.Igni<<"\n";
     }
     if(x.abilities.restoration){
         std::cout<<"Restoraton : "<<x.abilities.restoration<<"\n";
@@ -370,3 +370,4 @@ restart:
     }
     std::cout<<"The Witcher was honoured to save the ruler of Tuissaint.\n\n"<<"Geralt Adventures will continue...\n";
 }
+
