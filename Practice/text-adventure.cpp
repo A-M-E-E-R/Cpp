@@ -81,12 +81,12 @@ void stats(character x){
 
 character learn_skill(){
     srand(time(NULL));
-    int x = rand() % 10 + 1;
+    int x = rand() % 100 + 1;
     //srand(time(NULL));
     int y = rand() % 10 + 1;
     int ans;
     std::cout<<x<<" x "<<y<<" = ";
-    std::cout<<"**Answer the math correctly to learn a skill**\n";
+    std::cout<<"**Answer the math correctly to learn a skill.** \n\n(please don't cheat by using calculator)\n\n\n";
     std::cin>>ans;
     if(x*y == ans){
         std::cout<<"Wow... Excellent. Now its time to chose your skill!!!\n";
@@ -101,7 +101,7 @@ character learn_skill(){
         }
     }
     else{
-             std::cout<<"Oh no. Geralt couldn't learn the skill!!!\n";
+             std::cout<<"Oh no. Geralt couldn't learn the skill. He wish he had practiced math while growing up!!!\n";
     }
     return Geralt;
 }
@@ -110,6 +110,8 @@ character Attack(character x, character y){
     if(x.health<=0){
         return y;
     }
+    //the attacking power of every character shall be randomized to 78%-97% of the actual power to make the game unpredictable. 
+    //(it would be more interesting if the enemy characters attacking power increased a bit after each attack)
     std::cout<<"\n"<<x.name<<" attacked "<<y.name;
     std::cout<<"\n -"<<x.power<<"\n";
     y.health -= x.power;
@@ -370,5 +372,6 @@ restart:
     }
     std::cout<<"The Witcher was honoured to save the ruler of Tuissaint.\n\n"<<"Geralt Adventures will continue...\n";
 }
+
 
 
